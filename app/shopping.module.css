@@ -1,0 +1,15 @@
+.responsiveContainer {
+  max-width: 1280px;
+
+  @media (min-width: em(400px)) {
+    max-width: 400px;
+  }
+
+  @media (min-width: em(600px)) {
+    max-width: 600px;
+  }
+}
+
+.input {
+  border: 1px solid var(--mantine-color-green-filled);
+}
