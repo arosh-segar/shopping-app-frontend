@@ -17,14 +17,12 @@ import {
   Text,
   TextInput,
 } from "@mantine/core";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 import { BsCardText, BsHouse } from "react-icons/bs";
 import CheckoutCartSectionOrganism from "./CheckoutCartSectionOrganism";
 
 const CheckoutOrganism = () => {
-  const { push } = useRouter();
-  const { makeOrder } = useBookStore();
   const [paymentErrors, setPaymentErrors] = useState<FormErrors>({});
   const [shippingErrors, setShippingErrors] = useState<FormErrors>({});
   const [formData, setFormData] = useState<PaymentFormData & ShippingFormData>({
@@ -272,7 +270,7 @@ const CheckoutOrganism = () => {
                 w="100%"
                 onClick={() => {
                   if (inputsValid()) {
-                    //do something
+                    redirect("/");
                   }
                 }}
               >
